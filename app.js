@@ -29,6 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
       if (((i + 1) % 9) == 0) {
         cell.classList.add('thick-right');
       }
+
+      const subGrid = document.createElement('div');
+      subGrid.classList.add('subGrid');
+      subGrid.id = `subGrid-${i}`;
+
+      for (let j = 0; j < 9; j++) {
+        const subCell = document.createElement('div');
+        subCell.classList.add('subCell')
+        subCell.id = `subCell-${j}`;
+        subCell.textContent = j + 1;
+
+        subGrid.appendChild(subCell);
+      }
+
+      cell.appendChild(subGrid);
+
   
       sudokuGrid.appendChild(cell);
     }
